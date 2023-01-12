@@ -4,7 +4,7 @@
 <img src="./docs/assets/framework.jpg" width=600px>
 </div>
 
-Figure: Concept diagram of LinkGAN, where some axes of the latent space are \textit{explicitly} linked to the image pixels of a spatial area. In this way, we can alter the image content within the linked region simply by resampling the latent code on these axes.
+Figure: Concept diagram of LinkGAN, where some axes of the latent space are *explicitly* linked to the image pixels of a spatial area. In this way, we can alter the image content within the linked region simply by resampling the latent code on these axes.
 
 > **LinkGAN: Linking GAN Latents to Pixels for Controllable Image Synthesis** <br>
 > Jiapeng Zhu*, Ceyuan Yang*, Yujun Shen*, Zifan Shi, Deli Zhao, Qifeng Chen <br>
