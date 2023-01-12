@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="LinkGAN Project Page">
+  <meta name="keywords" content="GAN, Controllable Synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkGAN: Linking GAN Latents to Pixels for Controllable Image Synthesis</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/zhujiapeng/LowRankGAN/">
+              LowRankGAN
+            </a>
+            <a class="navbar-item" href="https://github.com/zhujiapeng/resefa/">
+              ReSeFa
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="publication-title">LinkGAN: Linking GAN Latents to Pixels <br> for Controllable Image Synthesis</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://zhujiapeng.github.io/">Jiapeng Zhu*</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://ceyuan.me/">Ceyuan Yang</a><sup>*2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://shenyujun.github.io/">Yujun Shen*</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://vivianszf.github.io/">Zifan Shi</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/site/zhaodeli/">Deli Zhao</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cqf.io/">Qifeng Chen</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>HKUST &nbsp&nbsp</span>
+              <span class="author-block"><sup>2</sup>Shanghai AI Laboratory &nbsp&nbsp</span>
+              <span class="author-block"><sup>3</sup>Ant Group &nbsp&nbsp</span>
+              <span class="author-block"><sup>3</sup>Alibaba Group</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="./contents/discoscene.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/zhujiapeng/linkgan"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="teaser">
+          <img src="./assets/teaser.jpg">
+        </div>
+        <h2 class="subtitle has-text-centered">
+           Precise local control achieved by <b>LinkGAN</b>.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              This work presents an easy-to-use regularizer for GAN training, which helps explicitly
+              link some axes of the latent space to an image region or a semantic category (e.g., sky)
+              in the synthesis.Establishing such a connection facilitates a more convenient local control
+              of GAN generation, where users can alter image content only within a spatial area simply
+              by partially resampling the latent codes. Experimental results confirm four appealing
+              properties of our regularizer, which we call <b>LinkGAN</b>.
+              <p>
+
+              <div class="teaser">
+                <img src="./assets/framework.jpg">
+              </div>
+
+              <p>
+              (1) Any image region can be linked to the latent space, even if the region is pre-selected before training and fixed for all instances.
+              (2) Two or multiple regions can be independently linked to different latent axes, surprisingly
+               allowing tokenized control of synthesized images. (3) Our regularizer can improve the
+               spatial controllability of both 2D and 3D GAN models, barely sacrificing the synthesis performance.
+               (4) The models trained with our regularizer are compatible with GAN inversion techniques and
+                maintain editability on real images.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <!-- <div class="hero-body"> -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-4">Single Arbitrary Region on FFHQ</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-ffhq0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-ffhq1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-ffhq2.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Single Arbitrary Region on AFHQ</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-afhq0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-afhq1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Single Arbitrary Region on Church</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-church0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-church1.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-church2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Mutiply Regions on FFHQ</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-multi-regions.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Semantic Region on Church/Car</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-semantic0.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-semantic1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-semantic2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Arbitrary Region on EG3D</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-eg3d-eyes.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-eg3d-nose.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-clevr">
+              <video poster="" id="steve" autoplay controls muted loop playsinline width="100%" height="100%">
+                <source src="./assets/videos/video-eg3d-mouth.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <div class="cit_cont">
+        <pre class="cit">@article{zhu2022linkgan,
+    title   = {LinkGAN: Linking {GAN} Latents to Pixels for Controllable Image Synthesis},
+    author  = {Zhu, Jiapeng and Yang, Ceyuan and Shen, Yujun and Shi, Zifan and Zhao, Deli and Chen, Qifeng},
+    journal = {arxiv:},
+    year    = {2022}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+
+          <div class="content has-text-justified">
+            <p>
+              The website template was adapted from <a href="https://nerfies.github.io/">Nerfies</a>. We thank the authors for sharing the templates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
