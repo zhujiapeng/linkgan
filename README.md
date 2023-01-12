@@ -8,7 +8,7 @@ Figure: Concept diagram of LinkGAN, where some axes of the latent space are \tex
 
 > **LinkGAN: Linking GAN Latents to Pixels for Controllable Image Synthesis** <br>
 > Jiapeng Zhu*, Ceyuan Yang*, Yujun Shen*, Zifan Shi, Deli Zhao, Qifeng Chen <br>
-> *arXiv preprint arXiv:* <br>
+> *arXiv: 2301.04604* <br>
 
 ![image](./docs/assets/teaser.jpg)
 
