@@ -4,11 +4,11 @@
 <img src="./docs/assets/framework.jpg" width=600px>
 </div>
 
-Figure: Concept diagram of LinkGAN, where some axes of the latent space are *explicitly* linked to the image pixels of a spatial area. In this way, we can alter the image content within the linked region simply by resampling the latent code on these axes.
+Figure: Concept diagram of LinkGAN, where some axes of the latent space are \textit{explicitly} linked to the image pixels of a spatial area. In this way, we can alter the image content within the linked region simply by resampling the latent code on these axes.
 
 > **LinkGAN: Linking GAN Latents to Pixels for Controllable Image Synthesis** <br>
-> Jiapeng Zhu*, Ceyuan Yang*, Yujun Shen*, Zifan Shi, Deli Zhao, Qifeng Chen <br>
-> *arXiv: 2301.04604* <br>
+> Jiapeng Zhu*, Ceyuan Yang*, Yujun Shen*, Zifan Shi, Bo Dai, Deli Zhao, Qifeng Chen <br>
+> *International Conference on Computer Vision (ICCV) 2023* <br>
 
 ![image](./docs/assets/teaser.jpg)
 
@@ -31,10 +31,10 @@ In the repository, we propose *LinkGAN* to explicitly link some latent axes to a
 ## BibTeX
 
 ```bibtex
-@article{zhu2022linkgan,
-  title   = {LinkGAN: Linking {GAN} Latents to Pixels for Controllable Image Synthesis},
-  author  = {Zhu, Jiapeng and Yang, Ceyuan and Shen, Yujun and Shi, Zifan and Zhao, Deli and Chen, Qifeng},
-  journal = {arXiv:2301.04604},
-  year    = {2022}
+@inproceedings{zhu2022linkgan,
+  title     = {LinkGAN: Linking {GAN} Latents to Pixels for Controllable Image Synthesis},
+  author    = {Zhu, Jiapeng and Yang, Ceyuan and Shen, Yujun and Shi, Zifan and Dai, Bo and Zhao, Deli and Chen, Qifeng},
+  booktitle = {International Conference on Computer Vision (ICCV)},
+  year      = {2023}
 }
 ```
